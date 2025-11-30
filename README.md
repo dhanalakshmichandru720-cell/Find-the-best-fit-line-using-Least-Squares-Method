@@ -19,64 +19,27 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ## Program:
 ```
 /*
-import numpy as np
-import matplotlib.pyplot as plt
-
-def estimate_coefficients(x, y):
-    """
-    Estimate slope (m) and intercept (c) for y = m*x + c using least squares.
-    """
-    if len(x) != len(y) or len(x) == 0:
-        raise ValueError("x and y must have the same non-zero length.")
-
-    n = len(x)
-    mean_x = np.mean(x)
-    mean_y = np.mean(y)
-
-    # Calculate slope (m) and intercept (c)
-    numerator = np.sum((x - mean_x) * (y - mean_y))
-    denominator = np.sum((x - mean_x) ** 2)
-
-    if denominator == 0:
-        raise ValueError("All x values are identical; slope is undefined.")
-
-    m = numerator / denominator
-    c = mean_y - m * mean_x
-
-    return m, c
-
-def predict(x, m, c):
-    """Predict y values for given x using y = m*x + c."""
-    return m * x + c
-
-def main():
-    try:
-        # Example dataset
-        x = np.array([1, 2, 3, 4, 5], dtype=float)
-        y = np.array([2, 4, 5, 4, 5], dtype=float)
-
-        # Estimate coefficients
-        m, c = estimate_coefficients(x, y)
-        print(f"Estimated coefficients:\nSlope (m) = {m:.4f}\nIntercept (c) = {c:.4f}")
-
-        # Predict values
-        y_pred = predict(x, m, c)
-
-        # Plotting
-        plt.scatter(x, y, color="blue", label="Data points")
-        plt.plot(x, y_pred, color="red", label=f"Fitted line: y = {m:.2f}x + {c:.2f}")
-        plt.xlabel("X")
-        plt.ylabel("Y")
-        plt.title("Univariate Linear Regression (Least Squares)")
-        plt.legend()
-        plt.grid(True)
-        plt.show()
-
-    except Exception as e:
-        print(f"Error: {e}")
-
-if __name__ == "__main__":
-    main()
+import numpy as np 
+import matplotlib.pyplot as plt 
+x=np.array(eval(input())) 
+y=np.array(eval(input())) 
+x_mean=np.mean(x) 
+y_mean=np.mean(y) 
+num=0 
+denom=0 
+for i in range(len(x)): 
+    num+=(x[i]-x_mean)*(y[i]-y_mean) 
+    denom+=(x[i]-x_mean)**2 
+    m=num/denom 
+    b=y_mean-m*x_mean 
+print(m,b) 
+y_predicted=m*x+b 
+print(y_predicted) 
+plt.scatter(x,y) 
+plt.plot(x,y_predicted,color='red') 
+plt.show()
+       
+    
 
 Developed by: dhanalakshmi.c
 RegisterNumber:  25018616
@@ -84,7 +47,8 @@ RegisterNumber:  25018616
 ```
 
 ## Output:
-<img width="1354" height="636" alt="Screenshot (145)" src="https://github.com/user-attachments/assets/a882e833-646b-49d1-9833-017c00a26de3" />
+<img width="1080" height="855" alt="image" src="https://github.com/user-attachments/assets/027ccb6b-d074-40b0-8e50-da18c10b0b87" />
+
 
 
 
